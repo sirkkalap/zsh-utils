@@ -1,0 +1,13 @@
+#!/bin/sh
+BASEDIR=$(cd $(dirname $0); /bin/pwd)
+. $BASEDIR/functions_sirkkalap.sh
+
+TOP10_VIEW_CMD='zfs list -t snapshot -S used | head -11'
+TOP10_CMD='zfs list -H -t snapshot -S used | head -10'
+
+# View top 10
+eval $TOP10_VIEW_CMD
+
+# Confirm and Destroy top 10
+confirm "Are you sure you want to delete these snapshots? [y/N]" && \
+eval $TOP10_CMD | cut -f 1 | xargs -n1 sudo -p '%p@%h Password: ' echo #zfs destroy
