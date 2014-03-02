@@ -1,6 +1,6 @@
 #!/bin/sh
 BASEDIR=$(cd $(dirname $0); /bin/pwd)
-. $BASEDIR/functions_sirkkalap.sh
+. $BASEDIR/functions_sirkkalap.sh # From sirkkalap/dotfiles
 
 TOP10_VIEW_CMD='zfs list -t snapshot -S used | head -11'
 TOP10_CMD='zfs list -H -t snapshot -S used | head -10'
