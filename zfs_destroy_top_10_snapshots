@@ -2,8 +2,8 @@
 BASEDIR=$(cd $(dirname $0); /bin/pwd)
 . $BASEDIR/functions_sirkkalap.sh # From sirkkalap/dotfiles
 
-TOP10_VIEW_CMD='zfs list -t snapshot -S used | head -11'
-TOP10_CMD='zfs list -H -t snapshot -S used | head -10'
+TOP10_VIEW_CMD='zfs list -t snapshot -S refer | head -11'
+TOP10_CMD='zfs list -H -t snapshot -S refer | head -10'
 
 # View top 10
 eval $TOP10_VIEW_CMD
