@@ -10,4 +10,4 @@ eval $TOP10_VIEW_CMD
 
 # Confirm and Destroy top 10
 confirm "Are you sure you want to delete these snapshots? [y/N]" && \
-eval $TOP10_CMD | cut -f 1 | xargs -n1 sudo -p '%p@%h Password: ' echo #zfs destroy
+eval $TOP10_CMD | cut -f 1 | xargs -n1 sudo -p '%p@%h Password: ' zfs destroy
